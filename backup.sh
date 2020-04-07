@@ -78,5 +78,7 @@ for DB in ${POSTGRES_DBS}; do
   find "${BACKUP_DIR}/weekly" -maxdepth 1 -mtime +${KEEP_WEEKS} -name "${DB}-*.sql*" -exec rm -rf '{}' ';'
   find "${BACKUP_DIR}/monthly" -maxdepth 1 -mtime +${KEEP_MONTHS} -name "${DB}-*.sql*" -exec rm -rf '{}' ';'
 done
-
 echo "SQL backup created successfully"
+
+# Executing python script for uploading SQL backup to azure blob storage
+python azblob.py ${DFILE}

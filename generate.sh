@@ -5,8 +5,8 @@ set -e
 DOCKER_BAKE_FILE=${1:-"docker-bake.hcl"}
 TAGS=${TAGS:-"12 11 10 9.6 9.5 9.4"}
 GOCRONVER=${GOCRONVER:-"v0.0.9"}
-PLATFORMS=${PLATFORMS:-"linux/amd64 linux/arm64 linux/arm/v7"}
-IMAGE_NAME=${IMAGE_NAME:-"prodrigestivill/postgres-backup-local"}
+PLATFORMS=${PLATFORMS:-"linux/amd64"}
+IMAGE_NAME=${IMAGE_NAME:-"akhilrs/postgres-backup-azure-blob"}
 
 cd "$(dirname "$0")"
 
