@@ -15,7 +15,7 @@ if (AZURE_SA and AZURE_SA_KEY) is not None:
     local_path, local_file_name = os.path.split(dump_file_path)
 
     print("Temp file = " + dump_file_path)
-    print("\nUploading to Blob storage as blob" + local_file_name)
+    print("\nUploading to Blob storage as blob " + local_file_name)
 
     block_blob_service.create_blob_from_path(AZURE_SA_CONTAINER, local_file_name, dump_file_path)
 else:
